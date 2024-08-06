@@ -1,21 +1,30 @@
 <div class="wrapper">
 
 
-  <div class="bar">
+
+  <div class="desktop">
+    <ng-container *ngFor="let item of desktop">
+      <div class="app">
+        <div class="img">
+          <img [src]="item.icon" [alt]="item.name">
+        </div>
+        <p>{{item.name}}</p>
+      </div>
+    </ng-container>
+  </div>
+
+
+
+
+
+  <div class="bar" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor="let item of pinned">
-      <div class="icon-img">
+      <div class="icon-img" cdkDrag>
         <img [src]="item.icon" [alt]="item.id">
       </div>
     </ng-container>
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 
